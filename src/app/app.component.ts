@@ -15,3 +15,4 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.preloader.hide();
   }
 }
+

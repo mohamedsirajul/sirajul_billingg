@@ -3,14 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  SERVER_URL: '',
   production: false,
   useHash: true,
   hmr: false,
-  adsense: {
-    adClient: 'ca-pub-9869345828784739',
-    show: true
-},
 };
 
 /*

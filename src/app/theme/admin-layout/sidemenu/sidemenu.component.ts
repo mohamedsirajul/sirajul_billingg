@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { MenuService } from '@core';
 import { ApiService } from 'app/service/api.service';
 
 @Component({
@@ -7,12 +6,18 @@ import { ApiService } from 'app/service/api.service';
   templateUrl: './sidemenu.component.html',
 })
 export class SidemenuComponent {
-  // NOTE: Ripple effect make page flashing on mobile
+
   @Input() ripple = false;
 
   // menus = this.menuService.getAll();
 
   menus = [
+      {
+        icon: "business",
+        name: "Sales",
+        state: "sales",
+        type: "link",
+      },
       {
         icon: "dashboard",
         name: "Dashboard",
@@ -20,62 +25,28 @@ export class SidemenuComponent {
         type: "link",
       },
       {
-        icon: "receipt",
-        name: "Estimates",
-        state: "estimates",
-        type: "link",
-      },
-      {
-        icon: "group",
-        name: "Customers",
-        state: "customers",
-        type: "link",
-      },
-      {
-        icon: "local_dining",
+        icon: "restaurant_menu",
         name: "Menu",
         state: "menu",
-        type: "sub",
-        children: [
-          {
-            icon: "local_dining",
-            name: "Products",
-            state: "products",
-            type: "link",
-          },
-          {
-            icon: "local_dining",
-            name: "Bulk Products",
-            state: "bulk-products",
-            type: "link",
-          },
-        ],
-      },
-      {
-        icon: "local_dining",
-        name: "Insights",
-        state: "insights",
-        type: "sub",
-        children: [
-          {
-            icon: "local_dining",
-            name: "Sales",
-            state: "sales",
-            type: "link",
-          },
-          {
-            icon: "local_dining",
-            name: "Booking",
-            state: "booking",
-            type: "link",
-          },
-        ],
-      },
-      {
-        icon: "collections_bookmark",
-        name: "Bulk Booking",
-        state: "bulk-booking",
         type: "link",
+      },
+      {
+        icon: "report",
+        name: "Reports",
+        state: "reports",
+        type: "sub",
+        children: [
+          {
+            name: "Sales Report",
+            state: "sales_report",
+            type: "link",
+          },
+          {
+            name: "Product Report",
+            state: "product_report",
+            type: "link",
+          },
+        ],
       },
       {
         icon: "settings",
@@ -88,7 +59,7 @@ export class SidemenuComponent {
   
   userRoles = [];
 
-  constructor(private menuService: MenuService,private apiservice:ApiService) {
+  constructor(private apiservice:ApiService) {
     console.log(this.menus)
   }
 

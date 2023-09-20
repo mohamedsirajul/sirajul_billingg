@@ -8,14 +8,12 @@ import { SidemenuComponent } from './admin-layout/sidemenu/sidemenu.component';
 import { AccordionAnchorDirective } from './admin-layout/sidemenu/accordionanchor.directive';
 import { AccordionDirective } from './admin-layout/sidemenu/accordion.directive';
 import { AccordionLinkDirective } from './admin-layout/sidemenu/accordionlink.directive';
-import { SidebarNoticeComponent } from './admin-layout/sidebar-notice/sidebar-notice.component';
 import { HeaderComponent } from './admin-layout/header/header.component';
 import { BrandingComponent } from './admin-layout/header/branding.component';
 import { NotificationComponent } from './admin-layout/header/notification.component';
 import { UserComponent } from './admin-layout/header/user.component';
 import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
 import { CustomizerComponent } from './admin-layout/customizer/customizer.component';
-import { GithubButtonComponent } from './admin-layout/header/github.component';
 import { TranslateComponent } from './admin-layout/header/translate.component';
 
 
@@ -28,14 +26,12 @@ import { TranslateComponent } from './admin-layout/header/translate.component';
     AccordionAnchorDirective,
     AccordionDirective,
     AccordionLinkDirective,
-    SidebarNoticeComponent,
     HeaderComponent,
     BrandingComponent,
     NotificationComponent,
     UserComponent,
     AuthLayoutComponent,
     CustomizerComponent,
-    GithubButtonComponent,
     TranslateComponent,
   ],
   imports: [SharedModule],
