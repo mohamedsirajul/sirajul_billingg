@@ -15,6 +15,7 @@ import { UserComponent } from './admin-layout/header/user.component';
 import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
 import { CustomizerComponent } from './admin-layout/customizer/customizer.component';
 import { TranslateComponent } from './admin-layout/header/translate.component';
+import { ClockComponent } from './admin-layout/clock/clock.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { TranslateComponent } from './admin-layout/header/translate.component';
     AuthLayoutComponent,
     CustomizerComponent,
     TranslateComponent,
+    ClockComponent
   ],
   imports: [SharedModule],
 })

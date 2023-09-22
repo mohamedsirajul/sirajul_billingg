@@ -29,6 +29,7 @@ export class AdminLayoutComponent implements OnInit, OnDestroy {
   @ViewChild('sidenav', { static: true }) sidenav: MatSidenav;
   @ViewChild('content', { static: true }) content: MatSidenavContent;
 
+
   options = this.settings.getOptions();
 
   private layoutChanges: Subscription;
@@ -66,6 +67,8 @@ export class AdminLayoutComponent implements OnInit, OnDestroy {
     private settings: SettingsService,
     @Inject(Directionality) public dir: AppDirectionality
   ) {
+      console.log(this.options)
+
     this.layoutChanges = this.breakpointObserver
       .observe([MOBILE_MEDIAQUERY, TABLET_MEDIAQUERY, MONITOR_MEDIAQUERY])
       .subscribe(state => {
@@ -83,12 +86,7 @@ export class AdminLayoutComponent implements OnInit, OnDestroy {
         this.content.scrollTo({ top: 0 });
       }
     });
-    this.banner = new Banner(
-      'ca-pub-9869345828784739',
-      5630624336,
-      'auto',
-      true
-    )
+
     // this.banner = new Banner(
     //   'ca-pub-9869345828784739',
     //   4969366433,

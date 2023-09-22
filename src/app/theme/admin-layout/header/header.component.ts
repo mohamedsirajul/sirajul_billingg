@@ -1,4 +1,3 @@
-import { E } from '@angular/cdk/keycodes';
 import { DatePipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import {
@@ -8,17 +7,9 @@ import {
   EventEmitter,
   Input,
   ChangeDetectionStrategy,
-  ElementRef,
-  ViewChild,
   OnDestroy,
 } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
-import { ApiService } from 'app/service/api.service';
-import { Observable, Subscription, timer } from 'rxjs';
-import { first } from 'rxjs/operators';
 import * as screenfull from 'screenfull';
-import { interval, Subject } from 'rxjs';
 import { MediaObserver } from '@angular/flex-layout';
 
 @Component({
@@ -36,28 +27,21 @@ export class HeaderComponent implements OnInit,OnDestroy {
   shopname: string;
   shopstatus: string;
   shop_status = false
-  val = 0;
   myDate: any;
-  actualdata = {}
-  data = {}
-  pending_orders = [];
-  subscription: Subscription;
-  dialogRef;
-  refresh: Observable<number> = timer(0, 10000);
+
 
   private get screenfull(): screenfull.Screenfull {
     return screenfull as screenfull.Screenfull;
   }
 
-  mediaSub: Subscription;
-  constructor(private apiservice: ApiService,public httpClient: HttpClient,private router: Router, private datePipe: DatePipe,private dialog: MatDialog,public mediaObserver:MediaObserver) {}
-  
+  constructor(public httpClient: HttpClient, private datePipe: DatePipe,public mediaObserver:MediaObserver) {}
+ 
   ngOnDestroy(): void {
     throw new Error('Method not implemented.');
   }
 
+
   dateTime=Date.now();
-  private $inActive=new Subject<boolean>();
 
   // startClock(){
   //   interval(1).subscribe(date=>{
@@ -78,7 +62,7 @@ export class HeaderComponent implements OnInit,OnDestroy {
   }
 
 
-  // TODO:
+
   toggleFullscreen() {
     if (this.screenfull.enabled) {
       this.screenfull.toggle();

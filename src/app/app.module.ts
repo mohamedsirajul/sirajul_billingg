@@ -13,6 +13,7 @@ import { DefaultInterceptor } from '@core';
 import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { MatFormFieldDefaultOptions, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { MY_DATE_FORMATS_PROVIDER } from './service/my-date-formats';
+import { DashboardComponent } from './routes/dashboard/dashboard.component';
 
 
 
@@ -36,7 +37,7 @@ const appearance: MatFormFieldDefaultOptions = {
 };
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, DashboardComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
