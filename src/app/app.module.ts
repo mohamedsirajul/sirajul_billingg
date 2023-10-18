@@ -53,7 +53,8 @@ const appearance: MatFormFieldDefaultOptions = {
       },
     }),
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: DefaultInterceptor, multi: true },
+  providers: [{ 
+    provide: HTTP_INTERCEPTORS, useClass: DefaultInterceptor, multi: true },
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
       useValue: appearance

@@ -239,9 +239,7 @@ export class MainComponent implements OnInit {
   applyFilter(filterValue: string) {
     filterValue = filterValue.trim();
     this.dataSource.filter = filterValue;
-    // console.log(filterValue)
-  }
-  
+  }  
 
 
   ngOnInit(): void {
